@@ -1,0 +1,33 @@
+<section>
+    <p class="title">Personal details</p>
+
+    <div class="form-content">
+        <form id="registerForm" [formGroup]="form" (ngSubmit)="continue()">
+            <p>Gender</p>
+            <mat-radio-group [(ngModel)]="genderSelection" color="primary" formControlName="gender">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+
+            <p>First Name</p>
+            <input type="text" name="firstname" formControlName="firstName">
+
+            <p>Last Name</p>
+            <input type="text" name="lastname" formControlName="lastName">
+
+            <p>Date of birth</p>
+            <input type="date" name="date" formControlName="dateOfBirth">
+
+            <p>Nationality</p>
+            <input type="text" name="nationality" formControlName="nationality">
+        </form>
+    </div>
+
+    <button mat-button type="submit" form="registerForm" value="Continue">Continue</button>
+
+    <div class="quote-content">
+        <img class="shield" alt="shield" src="assets/footer/Shield_with_checkmark_24dp.svg" />
+
+        <span>Inyova guarantees highest investment standards. <strong>Learn more.</strong> </span>
+    </div>
+</section>

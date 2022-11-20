@@ -1,0 +1,175 @@
+$header-width: 1440px;
+$header-height: 72px;
+$font-weight: 400;
+
+@mixin flex-center {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: $header-height;
+  padding: 0 40px;
+  background: #ffffff;
+  overflow: visible;
+}
+
+.logo {
+  padding-left: 6px;
+}
+
+.logo-content {
+  .inyova {
+    width: 100px;
+    height: 36px;
+  }
+
+  .windmill {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.navigation-content {
+  padding-left: 57px;
+
+  nav {
+    border-bottom: none;
+    line-height: 20px;
+
+    a {
+      font-weight: $font-weight;
+      color: #2f2c26;
+    }
+
+    .is-active {
+      font-weight: $font-weight * 2;
+      color: #2f2c26;
+      border-bottom: 4px solid #2f2c26;
+      opacity: 1;
+    }
+  }
+}
+
+.dropdown-content {
+  display: flex;
+  margin-left: auto;
+
+  mat-form-field {
+    background-color: #f8f6f1;
+    border-radius: 20px;
+    padding: 8px 16px;
+    width: 200px;
+    height: 40px;
+  }
+
+  .tree {
+    width: 15px;
+    height: 20px;
+    padding-right: 9px;
+  }
+
+  mat-button {
+    padding: 0 43px 0 51px;
+  }
+
+  .menu {
+    width: 18px;
+    height: 14px;
+    color: #2f2c26;
+  }
+
+  .question-background {
+    display: none;
+  }
+}
+
+::ng-deep mat-select-trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-infix {
+  border-top: 0;
+  padding: 0;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 10px 0;
+}
+
+::ng-deep mat-option {
+  .select-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+      font: Helvetica Now Display;
+      padding-left: 9px;
+      color: #2f2c26;
+    }
+  }
+}
+
+::ng-deep .mat-select-arrow {
+  color: #2f2c26;
+}
+
+@media screen and (max-width: 900px) {
+  .navigation-content {
+    display: none;
+  }
+
+  mat-form-field {
+    display: none;
+  }
+
+  .question-background {
+    cursor: pointer;
+    @include flex-center();
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: #9bb474;
+
+    .fa-question {
+      @include flex-center();
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffffff;
+      border-radius: 12px;
+      color: #ffffff;
+    }
+  }
+
+  .logo-content {
+    .inyova {
+      width: 78px;
+      height: 29px;
+    }
+
+    .windmill {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .menu {
+    width: 18px;
+    height: 14px;
+  }
+
+  header {
+    padding: 0 16px;
+  }
+}

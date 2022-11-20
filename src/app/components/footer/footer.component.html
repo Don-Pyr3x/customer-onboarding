@@ -1,0 +1,19 @@
+<section *ngIf="activeTab; else noFooter">
+    <div class="quote-content">
+        <img class="shield" alt="shield" src="assets/footer/Shield_with_checkmark_24dp.svg" />
+
+        <span>Inyova guarantees highest investment standards. Learn more.</span>
+    </div>
+
+    <div class="button-content">
+        <button mat-raised-button>Book Consultation</button>
+
+        <button mat-raised-button color="warn" (click)="nextStep()">Open account</button>
+
+        <button mat-button><i class="fa-regular fa-comment"></i> Chat</button>
+    </div>
+</section>
+
+<ng-template #noFooter>
+    <div class="no-footer"></div>
+</ng-template>

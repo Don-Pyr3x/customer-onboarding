@@ -1,0 +1,14 @@
+.content {
+  background-color: #f8f6f1;
+  height: calc(100vh - 172px);
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    height: calc(100vh - 72px);
+  }
+
+  app-footer {
+    display: none;
+  }
+}

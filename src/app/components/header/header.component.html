@@ -1,0 +1,46 @@
+<header>
+    <div class="logo-content">
+        <a [routerLink]="['/']">
+            <img class="inyova" alt="Inyova" src="assets/header/inyova.svg" />
+
+            <img class="windmill" alt="Logo" src="assets/header/Windmill.svg" />
+        </a>
+    </div>
+
+    <div class="navigation-content">
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="is-active">Strategy</a>
+            <a mat-tab-link [routerLink]="['/next-steps']" [routerLinkActiveOptions]="{exact: true}"
+                routerLinkActive="is-active" disabled="activeTab">Next steps</a>
+        </nav>
+    </div>
+
+    <div class="dropdown-content">
+        <mat-form-field appearance="legacy">
+            <mat-select [(value)]="modeSelect">
+                <mat-select-trigger><img class="tree" alt="Tree" src="assets/header/Tree_24dp.svg" /> Inyova
+                    Investment
+                </mat-select-trigger>
+                <mat-option value="investment">
+                    <div class="select-content">
+                        <img class="tree" alt="Tree" src="assets/header/Tree_24dp.svg" />
+                        <span>Inyova Investment</span>
+                    </div>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <span class="question-background">
+            <i class="fa-solid fa-question"></i>
+        </span>
+
+        <button mat-button [matMenuTriggerFor]="menu"><img class="menu" alt="Menu"
+                src="assets/header/Menu_24dp.svg" /></button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </div>
+</header>
